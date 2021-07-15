@@ -1,4 +1,9 @@
 # 152-001-Front-End-Dev-With-React
+Welcome to Front-End Development with React!
+
+[Gateway Technical College](http://gtc.edu)
+
+## Course Description
 In this course, students develop React applications using JavaScript and JSX tags. They examine the
 architecture of React applications including components, props and states, directives and services.
 Students create single-page applications that utilize data binding, the React router library and are

@@ -59,7 +59,7 @@ Now, in the `FlightList` component, we'll retrieve the `id` URL parameter via th
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-function FlightList(props) {
+export function FlightList(props) {
     let { id } = useParams(); // Unpacking and retrieve id
     let index = props.flightData.findIndex(e => e.id === parseInt(id));
     let flight = this.props.flightData[index];
@@ -74,7 +74,6 @@ function FlightList(props) {
         </div>
     )
 }
-export default FlightList;
 ```
 
 ## :two: How to Retrieve URL Parameters Using *Class Components*
@@ -125,7 +124,7 @@ In the `EditFlight` component, retrieve the `id` from the URL parameters via the
 import React from 'react';
 import FlightForm from './FlightForm';
 
-class EditFlight extends React.Component {
+export class EditFlight extends React.Component {
     constructor(props) {
         super(props);
     }

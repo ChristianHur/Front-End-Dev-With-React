@@ -150,4 +150,4 @@ export default EditFlight;
 ```
 
 ### Live Sample Here
-🔗 https://stackblitz.com/edit/react-p4a5h2?file=public/index.html
+🔗 https://stackblitz.com/edit/react-p4a5h2?file=src/App.js

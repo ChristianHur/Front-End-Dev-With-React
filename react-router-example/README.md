@@ -2,7 +2,7 @@
 React Router version 6 introduces several powerful new features, as well as improved compatibility with the latest versions of React. It also introduces a few breaking changes from version 5. This document is a comprehensive guide on how to upgrade your v4/5 app to v6 while hopefully being able to ship as often as possible as you go.  Below are two examples of changes that you will need to adhere to if you're running version 6.  To learn more about all the new changes and how to upgrade to version 6, please visit https://reactrouterdotcom.fly.dev/docs/en/v6/upgrading/v5
 
 - React Router v6 introduces a `Routes` component that replaces `Switch`.  In order to use v6, you'll need to convert all your `<Switch>` elements to `<Routes>`.
-- React Router v6 introduces a `element` property that replaces the `render` property/function.  Thus passing URL parameters to class components is a little different.  There are no changes to function components.
+- React Router v6 introduces a `element` property that replaces the `render` property/function.  Thus passing URL parameters to class components is a little different but can still be done using a Wrapper function component. Function components can retrieve URL parameters using Hooks the usual way.
 
 ## :one: How to Retrieve URL Parameters Using *Function Components*
 Below is one common and easy way to create react routes.

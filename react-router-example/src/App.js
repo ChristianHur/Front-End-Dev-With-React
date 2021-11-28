@@ -15,12 +15,11 @@ class App extends React.Component {
   render() {
     const Wrapper = (props) => {
       const params = useParams();
-      console.log('WRAPPER PARAMS: ', params);
       return (
         <EditFlight
           flightData={this.state.flightData}
           updateFlight={this.updateFlight}
-          {...{ ...props, match: { params } }}
+          {...{...props, match: { params } }}
         />
       );
     };

@@ -6,7 +6,6 @@ export function FlightForm(props) {
     <div>
       <h1>Flight Form</h1>
       <div>
-        <h1>Flight Data</h1>
         <p>Flight Number: {flight.flight_no}</p>
         <p>Airline: {flight.airline}</p>
         <p>Departure Airport: {flight.departure_airport}</p>

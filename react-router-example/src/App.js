@@ -38,9 +38,9 @@ class App extends React.Component {
     );
   }
   updateFlight(idx, flight) {
-    let temp = this.state.flightData;
-    temp[idx] = flight;
-    this.setState({ flightData: temp });
+    let flightData = this.state.flightData;
+    flightData[idx] = flight;
+    this.setState({ flightData });
   }
 }
 export default App;

@@ -94,10 +94,10 @@ class App extends React.Component {
     this.updateFlight = this.updateFlight.bind(this);
   }
 
-  updateFlight(idx, flight) {
-    let temp = this.state.flightData;
-    temp[idx] = flight;
-    this.setState({ flightData: temp })
+  updateFlight(id, flight) {
+    let flightData = this.state.flightData;
+    flightData[id] = flight;
+    this.setState({ flightData })
   }
 
   render() {

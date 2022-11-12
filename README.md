@@ -1,4 +1,4 @@
-# Front-End Development With Reac
+# Front-End Development With ReactJS
 Welcome to Front-End Development with React!
 
 ## Course Description

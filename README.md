@@ -1,6 +1,6 @@
-# 152-001-Front-End-Dev-With-React
+# Front-End-Dev-With-React
 Welcome to Front-End Development with React!
-This course is part of the [Full-Stack Web Developer Certificate](https://www.gtc.edu/programs/certificates/it-full-stack-web-developer) being offered at [Gateway Technical College](http://gtc.edu).
+
 ## Course Description
 In this course, students develop React applications using JavaScript and JSX tags. They examine the
 architecture of React applications including components, props and states, directives and services.

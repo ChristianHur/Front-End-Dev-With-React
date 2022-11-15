@@ -10,7 +10,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { flightData: FlightData };
-    this.updateFlight = this.updateFlight.bind(this);
   }
   render() {
     const Wrapper = (props) => {
@@ -37,7 +36,7 @@ class App extends React.Component {
       </div>
     );
   }
-  updateFlight(idx, flight) {
+  updateFlight = (idx, flight) => {
     let flightData = this.state.flightData;
     flightData[idx] = flight;
     this.setState({ flightData });

@@ -9,13 +9,8 @@ export default class App extends React.Component {
     //this.updateParent = this.updateParent.bind(this);
   }
 
-  updateParent=(event)=>{
-    this.setState({parentData: event.target.value})
-  }
-
-  updateChild=(data)=>{
-    this.setState({childData : data})
-  }
+  updateParent = event => this.setState({parentData: event.target.value});
+  updateChild = data => this.setState({childData : data});
 
   render() {
     return (

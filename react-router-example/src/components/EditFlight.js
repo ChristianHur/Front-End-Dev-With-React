@@ -7,9 +7,9 @@ export class EditFlight extends React.Component {
   }
   render() {
     console.log(this.props);
-    let { id } = this.props.match.params; // Unpacking and retrieve id
-    let index = this.props.flightData.findIndex((e) => e.id === parseInt(id));
-    let flight = this.props.flightData[index];
+    const { id } = this.props.match.params; // Unpacking and retrieve id
+    const index = this.props.flightData.findIndex((e) => e.id === parseInt(id));
+    const flight = this.props.flightData[index];
     return (
       <FlightForm
         flight={flight}
@@ -19,11 +19,11 @@ export class EditFlight extends React.Component {
     );
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     // Implemenation here
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     // Implementation here
   }

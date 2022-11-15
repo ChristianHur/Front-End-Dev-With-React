@@ -2,9 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 export function FlightList(props) {
-  let { id } = useParams(); // Unpacking and retrieve id
-  let index = props.flightData.findIndex((e) => e.id === parseInt(id));
-  let flight = props.flightData[index];
+  const { id } = useParams(); // Unpacking and retrieve id
+  const index = props.flightData.findIndex((e) => e.id === parseInt(id));
+  const flight = props.flightData[index];
   return (
     <div>
       <h1>Flight List Data</h1>

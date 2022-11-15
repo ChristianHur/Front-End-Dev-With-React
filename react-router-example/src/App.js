@@ -37,7 +37,7 @@ class App extends React.Component {
     );
   }
   updateFlight = (idx, flight) => {
-    let flightData = this.state.flightData;
+    const flightData = this.state.flightData;
     flightData[idx] = flight;
     this.setState({ flightData });
   }

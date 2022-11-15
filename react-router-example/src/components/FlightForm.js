@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function FlightForm(props) {
-  let flight = props.flight;
+  const flight = props.flight;
   return (
     <div>
       <h1>Flight Form</h1>

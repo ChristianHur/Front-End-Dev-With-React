@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = { flightData: FlightData };
   }
   render() {
-    const Wrapper = (props) => {
+    const Wrapper = props => {
       const params = useParams();
       return (
         <EditFlight

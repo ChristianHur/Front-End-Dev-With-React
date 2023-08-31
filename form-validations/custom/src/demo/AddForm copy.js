@@ -24,12 +24,6 @@ SOFTWARE.
 
 import React from 'react';
 
-// Components
-import UserComponent from './components/UserComponent';
-import GameComponent from './components/GameComponent';
-import PointsComponent from './components/PointsComponent';
-import EventDateComponent from './components/EventDateComponent';
-
 // Child component - the Form to add one record
 // Controlled Component - source of truth in React
 class AddForm extends React.Component {
@@ -107,7 +101,7 @@ class AddForm extends React.Component {
             validReqs.event.errMsg = '';
         }
 
-        if (new Date(this.defaultDate) > new Date(data.event)) {
+        if ( new Date(this.defaultDate) > new Date(data.event) ) {
             validReqs.event.errPastDate = `Date cannot be in the past.`;
             validReqs.error = true;
         } else {
@@ -122,23 +116,88 @@ class AddForm extends React.Component {
         const data = this.state.data;
         const validReqs = this.state.validReqs;
 
-        const isValidate = (key, field = null) => (validReqs[key].errMsg || validReqs[key][field]) ? 'form-control is-invalid' :'form-control';
+        const isValidate = (key, field = null) => {
 
-        // Component parameters
-        const userParams = { data, validReqs, isValidate, handleChange: this.handleChange };
-        const gameParams = { data, handleChange: this.handleChange }
-        const pointsParams = { data, validReqs, isValidate, handleChange: this.handleChange }
-        const eventParams = {data, validReqs, isValidate, handleChange: this.handleChange}
+            if (validReqs[key].errMsg || validReqs[key][field])
+                return 'form-control is-invalid';
+            else
+                return 'form-control';
+        }
 
         return (
             <div className="col-md-8 ml-5">
                 <form>
                     <div className="form-row">
-                        <UserComponent obj={userParams} />
-                        <GameComponent obj={gameParams} />
-                        <PointsComponent obj={pointsParams} />
-                        <EventDateComponent obj={eventParams} />
+                        <div className="col-md-4 mb-3">
+                            <label>User:</label>
+                            <input
+                                className={isValidate('user', 'errTaken')}
+                                name="user"
+                                value={data.user}
+                                onChange={this.handleChange}
+                            />
 
+                            {validReqs.user.errMsg &&
+                                <div className='invalid-feedback'>
+                                    {validReqs.user.errMsg}
+                                </div>
+                            }
+                            {validReqs.user.errTaken &&
+                                <div className='invalid-feedback'>
+                                    {validReqs.user.errTaken}
+                                </div>
+                            }
+
+                        </div>
+                        <div className="col-md-4 mb-3">
+                            <label>Game:</label>
+                            <select
+                                className="form-control"
+                                name="game"
+                                defaultValue={data.game}
+                                onChange={this.handleChange}
+                            >
+                                <option>Pac-Man</option>
+                                <option>Pong</option>
+                                <option>Galaga</option>
+                                <option>Tetris</option>
+                            </select>
+                        </div>
+                        <div className="col-md-4 mb-3">
+                            <label>Points:</label>
+                            <input
+                                className={isValidate('points')}
+                                name="points"
+                                type="number"
+                                value={data.points}
+                                onChange={this.handleChange}
+                            />
+                            {validReqs.points.errMsg &&
+                                <div className='invalid-feedback'>
+                                    {validReqs.points.errMsg}
+                                </div>
+                            }
+                        </div>
+                        <div className="col-md-4 mb-3">
+                            <label>Add Event Date:</label>
+                            <input
+                                className={isValidate('event', 'errPastDate')}
+                                name="event"
+                                type="date"
+                                value={data.event}
+                                onChange={this.handleChange}
+                            />
+                            {validReqs.event.errMsg &&
+                                <div className='invalid-feedback'>
+                                    {validReqs.event.errMsg}
+                                </div>
+                            }
+                            {validReqs.event.errPastDate &&
+                                <div className='invalid-feedback'>
+                                    {validReqs.event.errPastDate}
+                                </div>
+                            }
+                        </div>
                         <div className="col-md-4 mb-3">
                             <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
                         </div>

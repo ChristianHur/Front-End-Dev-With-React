@@ -63,23 +63,12 @@ function ButtonNotClickable(props){
     );
 }
 
-class ChildUpdate extends React.Component{
-    constructor(props){
-        super(props);
-        console.log('ChildUpdate Constructor');
-    }
-
-    render(){
-        
-        if(this.props.point % 2 == 0){
-            return ( <ButtonClickable data={this.props} /> );
-        }else{
-            return ButtonNotClickable(this.props);
-        }
-        
-        
-    }
+function ChildUpdate(props){        
+    if(props.point % 2 == 0){
+        return ( <ButtonClickable data={props} /> );
+    }else{
+       return ButtonNotClickable(props);
+    }  
 }
-
 
 export default App;

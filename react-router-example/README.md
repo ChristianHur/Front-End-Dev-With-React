@@ -119,7 +119,7 @@ class App extends React.Component {
 export default App;
 ```
 
-You can make the Wrapper component (function) more adaptable by passing in a component of your choice as follows.
+You can make the Wrapper component (function) more adaptable by passing in any Component of your choice as follows.
 ```js
 const Wrapper = props => {
       const params = useParams();
@@ -127,7 +127,7 @@ const Wrapper = props => {
       return <Component flightData={this.state.flightData} updateFlight={this.updateFlight} {...{...props, match: {params}} } />
 }
 
-// Declare the routes like these - same route but different component
+// Declare the route like this
 <Route path="/edit/:id" element={<Wrapper {...{ Component: EditFlight }} />} />
 <Route path="/edit/:id" element={<Wrapper {...{ Component: UpdateData }} />} />
 <Route path="/edit/:id" element={<Wrapper {...{ Component: AnotherEditComponent }} />} />

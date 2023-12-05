@@ -118,6 +118,21 @@ class App extends React.Component {
 }
 export default App;
 ```
+
+You can make the Wrapper component (function) more adaptable by passing in a component of your choice as follows.
+```js
+const Wrapper = props => {
+      const params = useParams();
+      const {Component} = props;
+      return <Component flightData={this.state.flightData} updateFlight={this.updateFlight} {...{...props, match: {params}} } />
+}
+
+// Declare the routes like these - same route but different component
+<Route path="/edit/:id" element={<Wrapper {...{ Component: EditFlight }} />} />
+<Route path="/edit/:id" element={<Wrapper {...{ Component: UpdateData }} />} />
+<Route path="/edit/:id" element={<Wrapper {...{ Component: AnotherEditComponent }} />} />
+```
+
 ### EditFlight.js Component
 In the `EditFlight` component, retrieve the `id` from the URL parameters via the `props` object.  After the `id` is obtained, search  the `flightData` list and retrieve the `flight` record matching the `id`.  Finally, pass this record to another child component `FlightForm` to populate the form for editing.
 ```js
